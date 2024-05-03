@@ -10,26 +10,25 @@ import java.util.Scanner;
  * </p>
  */
 public class CriarConta {
-	Scanner scan = new Scanner(System.in).useLocale(Locale.ROOT);
-	
-	String nomeCliente = null;
-	int numero = 0;
-	String agencia = null;
-	double saldo = 0;
-	
-	public void novaConta(String[] args) {
-		System.out.println("Por favor, digite seu nome !");
-		nomeCliente = scan.next();
 		
-		System.out.println("Por favor, digite o número da agência !");
-		numero = scan.nextInt();
+	public static void novaConta(Dados data) {
+		Scanner scan = new Scanner(System.in).useLocale(Locale.ROOT);
 		
-		System.out.println("Por favor, digite sua agência !");
-		agencia = scan.next();
+		System.out.printf("Por favor, digite seu nome!\n");
+		data.nomeCliente = scan.next();
 		
-		System.out.println("Por favor, digite o valor do primeiro depósito !");
-		saldo = scan.nextDouble();
+		System.out.println("Por favor, digite o número da conta!");
+		data.conta = scan.nextInt();
 		
-		System.out.printf("Olá %s, obrigado por criar uma conta em nosso banco. \nSua agência é %s. \nConta %s. \nSaldo atual de R$ %s disponível para saque \n", nomeCliente, agencia, numero, saldo);
+		System.out.println("Por favor, digite sua agência!");
+		data.agencia = scan.next();
+
+		System.out.println("Por favor, digite seu CPF!");
+		data.cpf = scan.next();
+		
+		System.out.println("Por favor, digite o valor do primeiro depósito!");
+		data.saldo = scan.nextDouble();
+		
+		System.out.printf("\nOlá %s, obrigado por criar uma conta em nosso banco. \nSua agência é %s. \nConta %s. \nSaldo atual de R$ %s disponível para saque \n\n", data.nomeCliente, data.agencia, data.conta, String.format("%.2f", data.saldo));
 	}
 }
