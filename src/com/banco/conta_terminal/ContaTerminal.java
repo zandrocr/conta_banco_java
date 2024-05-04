@@ -4,9 +4,10 @@ import java.util.Locale;
 import java.util.Scanner;
 
 import com.banco.consulta.ConsultaCPF;
-import com.banco.consulta.Saldo;
+import com.banco.consulta.Saque;
 import com.banco.criar_conta.CriarConta;
 import com.banco.criar_conta.Dados;
+import com.banco.planos.SeguroVida;
 
 /**
  * <h1>Conta Terminal</h1>
@@ -23,22 +24,23 @@ public class ContaTerminal {
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		Dados data = new Dados();
-		
+
 		String resposta;
 
 		Scanner scan = new Scanner(System.in).useLocale(Locale.ROOT);
 
 		do {
-			System.out.println("Oque deseja fazer?"
-					+ "\nFazer uma nova conta [N]"
-					+ "\nConsultar se tem conta aberta em seu nome [C]"
-					+ "\nConsultar o saldo atual da sua conta [S]" 
+			System.out.println("Oque deseja fazer?" + "\nFazer uma nova conta [N]"
+					+ "\nConsultar se tem conta aberta em seu nome [C]" 
+					+ "\nRealizar um saque na conta [S]"
+					+ "\nPlanos [P]"
 					+ "\nFechar [F]");
 			resposta = scan.nextLine();
 
 			if (resposta.equalsIgnoreCase("N")) {
 				
-				CriarConta.novaConta(data);
+//				CriarConta.novaConta(data);
+				CriarConta.testNovaConta(data);
 				
 			} else if(resposta.equalsIgnoreCase("C")) {
 				
@@ -46,9 +48,14 @@ public class ContaTerminal {
 				
 			}else if (resposta.equalsIgnoreCase("S")) {
 				
-				Saldo.saldo(data);
+				Saque.saque(data);
 				
-			} else if (resposta.equalsIgnoreCase("F")) {
+			}else if (resposta.equalsIgnoreCase("P")) {
+				
+//				SeguroVida.planoVida(data);
+				SeguroVida.testPlanoVida(data);
+				
+			}else if (resposta.equalsIgnoreCase("F")) {
 				
 				System.out.printf("\nVolte sempre!\n");
 				
@@ -61,7 +68,7 @@ public class ContaTerminal {
 				System.out.println("Não entendi. Por favor, responda S ou N\n");
 				
 			}
-			
+
 		} while (!resposta.equalsIgnoreCase("N") || resposta.equalsIgnoreCase("N"));
 
 	}

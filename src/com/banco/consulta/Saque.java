@@ -5,8 +5,8 @@ import java.util.Scanner;
 
 import com.banco.criar_conta.Dados;
 
-public class Saldo {
-	public static void saldo(Dados data) {
+public class Saque {
+	public static void saque(Dados data) {
 		Scanner scan = new Scanner(System.in).useLocale(Locale.ROOT);
 		double saque;
 		
