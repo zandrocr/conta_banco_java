@@ -4,10 +4,14 @@ import java.util.Locale;
 import java.util.Scanner;
 
 import com.banco.consulta.ConsultaCPF;
-import com.banco.consulta.Saque;
+import com.banco.consulta.ConsultaCPFTest;
+import com.banco.consulta.Saldo;
+import com.banco.consulta.SaldoTest;
 import com.banco.criar_conta.CriarConta;
+import com.banco.criar_conta.CriarContaTest;
 import com.banco.criar_conta.Dados;
 import com.banco.planos.SeguroVida;
+import com.banco.planos.SeguroVidaTest;
 
 /**
  * <h1>Conta Terminal</h1>
@@ -20,8 +24,8 @@ import com.banco.planos.SeguroVida;
  * @version 1.0
  * @since 01/05/2024
  */
+@SuppressWarnings("resource")
 public class ContaTerminal {
-	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		Dados data = new Dados();
 
@@ -30,46 +34,46 @@ public class ContaTerminal {
 		Scanner scan = new Scanner(System.in).useLocale(Locale.ROOT);
 
 		do {
-			System.out.println("Oque deseja fazer?" + "\nFazer uma nova conta [N]"
-					+ "\nConsultar se tem conta aberta em seu nome [C]" 
-					+ "\nRealizar um saque na conta [S]"
-					+ "\nPlanos [P]"
-					+ "\nFechar [F]");
+			System.out.println("Olá Tudo bem?");
+			System.out.println("Oque deseja fazer?\n");
+			System.out.println("Fazer uma nova conta [N]");
+			System.out.println("Consultar se tem conta aberta em seu nome [C]");
+			System.out.println("Realizar uma movimentação na conta [S]");
+			System.out.println("Planos [P]");
+			System.out.println("Fechar [F]");
 			resposta = scan.nextLine();
 
 			if (resposta.equalsIgnoreCase("N")) {
 				
 //				CriarConta.novaConta(data);
-				CriarConta.testNovaConta(data);
+				CriarContaTest.novaContaTest(data);
 				
 			} else if(resposta.equalsIgnoreCase("C")) {
 				
-				ConsultaCPF.consultaCPF(data);
+//				ConsultaCPF.consultaCPF(data);
+				ConsultaCPFTest.consultaCPFTest(data);
 				
 			}else if (resposta.equalsIgnoreCase("S")) {
 				
-				Saque.saque(data);
+//				Saldo.saldo(data);
+				SaldoTest.saldoTest(data);
 				
 			}else if (resposta.equalsIgnoreCase("P")) {
 				
 //				SeguroVida.planoVida(data);
-				SeguroVida.testPlanoVida(data);
+				SeguroVidaTest.planoVidaTest(data);
 				
-			}else if (resposta.equalsIgnoreCase("F")) {
-				
-				System.out.printf("\nVolte sempre!\n");
-				
+			}else if (resposta.equalsIgnoreCase("F")) {				
+				System.out.printf("\nVolte sempre!\n");				
 				scan.close();
-				
-				return;
-				
+				break;
 			} else {
 				
-				System.out.println("Não entendi. Por favor, responda S ou N\n");
+				System.out.println("Não entendi!");
 				
 			}
 
-		} while (!resposta.equalsIgnoreCase("N") || resposta.equalsIgnoreCase("N"));
+		} while (!resposta.equalsIgnoreCase("F"));
 
 	}
 }

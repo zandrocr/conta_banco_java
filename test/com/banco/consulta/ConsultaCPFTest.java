@@ -1,20 +1,12 @@
 package com.banco.consulta;
 
-import java.util.Arrays;
-import java.util.Locale;
-import java.util.Scanner;
-
-import com.banco.criar_conta.CriarConta;
+import com.banco.criar_conta.CriarContaTest;
 import com.banco.criar_conta.Dados;
 
-public class ConsultaCPF {
-	private static Scanner scan;
-
-	public static void consultaCPF(Dados data) {
-		scan = new Scanner(System.in).useLocale(Locale.ROOT);
-
+public class ConsultaCPFTest {
+	public static void consultaCPFTest(Dados data) {
 		System.out.printf("Informe seu CPF:\n");
-		String cpf = scan.nextLine();
+		String cpf = "1";
 
 		if (cpf.equalsIgnoreCase(data.cpf)) {
 			System.out.printf("\nEncontrei sua conta em nosso banco.");
@@ -26,7 +18,7 @@ public class ConsultaCPF {
 				System.out.println("");
 			for(int i = 0; i < data.planos.length; i++) {
 				System.out.print(data.planos[i]);
-				if(i < data.planos.length -1) {
+				if(i < data.planos.length - 1) {
 					System.out.print(", ");
 				}else {
 					System.out.println("\n");					
@@ -34,10 +26,10 @@ public class ConsultaCPF {
 			}
 		} else {
 			System.out.printf("Você ainda não tem conta, deseja criar uma? Sim [S] Não [N]\n");
-			String resposta = scan.nextLine();
+			String resposta = "s";
 
 			if (resposta.equalsIgnoreCase("S")) {
-				CriarConta.novaConta(data);
+				CriarContaTest.novaContaTest(data);
 			} else if (resposta.equalsIgnoreCase("N")) {
 				System.out.printf("\nVamos voltar então\n");
 			} else {

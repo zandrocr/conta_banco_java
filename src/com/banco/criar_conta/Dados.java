@@ -8,7 +8,7 @@ public class Dados {
 	public int conta;
 	public int agencia;
 	public double saldo;
-	public String cpf = "";
+	public String cpf;
 	public String[] planos = {};
 	
 	public void planosArray(String args) {
