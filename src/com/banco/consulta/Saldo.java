@@ -7,6 +7,7 @@ import com.banco.criar_conta.CriarConta;
 import com.banco.criar_conta.Dados;
 import com.banco.movimentacao.Deposito;
 import com.banco.movimentacao.Saque;
+import com.banco.movimentacao.Tranferencia;
 
 @SuppressWarnings("resource")
 public class Saldo {
@@ -21,7 +22,8 @@ public class Saldo {
 			if (cpf.equalsIgnoreCase(data.cpf) && data.cpf != null) {
 				System.out.printf("Saldo atual: R$ %s", String.format("%.2f", data.saldo));
 				
-				System.out.println("\nDeseja sacar ou depositar? Saque [S] Deposito [D] Nenhum [N]");
+				System.out.println("\n\nDeseja sacar, depositar ou tranferir?");
+				System.out.println("\nSaque [S] Deposito [D] Transferência [T] Nenhum [N]");
 				resposta = scan.next();
 					if (resposta.equalsIgnoreCase("S")) {				
 						Saque.saque(data);
@@ -29,6 +31,9 @@ public class Saldo {
 					} else if (resposta.equalsIgnoreCase("D")) {				
 						Deposito.deposito(data);
 						
+					}else if (resposta.equalsIgnoreCase("T")) {
+						Tranferencia.tranferencia(data);
+
 					} else if (resposta.equalsIgnoreCase("N")) {
 						System.out.println("Vamos voltar então\n");
 						

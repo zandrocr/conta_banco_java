@@ -4,14 +4,14 @@ import java.util.Locale;
 import java.util.Scanner;
 
 import com.banco.consulta.ConsultaCPF;
-import com.banco.consulta.ConsultaCPFTest;
 import com.banco.consulta.Saldo;
-import com.banco.consulta.SaldoTest;
 import com.banco.criar_conta.CriarConta;
-import com.banco.criar_conta.CriarContaTest;
 import com.banco.criar_conta.Dados;
 import com.banco.planos.SeguroVida;
-import com.banco.planos.SeguroVidaTest;
+import test.com.banco.consulta.ConsultaCPFTest;
+import test.com.banco.consulta.SaldoTest;
+import test.com.banco.criar_conta.CriarContaTest;
+import test.com.banco.planos.SeguroVidaTest;
 
 /**
  * <h1>Conta Terminal</h1>
@@ -47,7 +47,7 @@ public class ContaTerminal {
 				
 //				CriarConta.novaConta(data);
 				CriarContaTest.novaContaTest(data);
-				
+
 			} else if(resposta.equalsIgnoreCase("C")) {
 				
 //				ConsultaCPF.consultaCPF(data);
@@ -55,8 +55,8 @@ public class ContaTerminal {
 				
 			}else if (resposta.equalsIgnoreCase("S")) {
 				
-//				Saldo.saldo(data);
-				SaldoTest.saldoTest(data);
+				Saldo.saldo(data);
+//				SaldoTest.saldoTest(data);
 				
 			}else if (resposta.equalsIgnoreCase("P")) {
 				

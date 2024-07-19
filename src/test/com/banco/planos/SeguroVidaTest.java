@@ -1,6 +1,6 @@
-package com.banco.planos;
+package test.com.banco.planos;
 
-import com.banco.criar_conta.CriarContaTest;
+import test.com.banco.criar_conta.CriarContaTest;
 import com.banco.criar_conta.Dados;
 
 public class SeguroVidaTest {

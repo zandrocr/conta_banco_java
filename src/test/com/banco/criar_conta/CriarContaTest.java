@@ -1,6 +1,8 @@
-package com.banco.criar_conta;
+package test.com.banco.criar_conta;
 
-public class CriarContaTest {	
+import com.banco.criar_conta.Dados;
+
+public class CriarContaTest {
 
 	public static void novaContaTest(Dados data) {
 		System.out.println("Por favor, digite seu nome!");

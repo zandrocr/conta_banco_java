@@ -1,9 +1,9 @@
-package com.banco.consulta;
+package test.com.banco.consulta;
 
-import com.banco.criar_conta.CriarContaTest;
+import test.com.banco.criar_conta.CriarContaTest;
 import com.banco.criar_conta.Dados;
-import com.banco.movimentacao.DepositoTest;
-import com.banco.movimentacao.SaqueTest;
+import test.com.banco.movimentacao.DepositoTest;
+import test.com.banco.movimentacao.SaqueTest;
 
 public class SaldoTest {
 	public static void saldoTest(Dados data) {

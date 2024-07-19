@@ -1,4 +1,4 @@
-package com.banco.movimentacao;
+package test.com.banco.movimentacao;
 
 import java.util.Locale;
 import java.util.Scanner;
